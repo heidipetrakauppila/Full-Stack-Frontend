@@ -10,7 +10,7 @@ const stack = [
 
 export default function App() {
   const [count, setCount] = useState(0);
-  const title = import.meta.env.VITE_APP_TITLE ?? "Deno + Vite Starter";
+  const title = "Hello FullStack"; //import.meta.env.VITE_APP_TITLE ?? "Deno + Vite Starter";
 
   return (
     <main className="page-shell">
@@ -22,9 +22,7 @@ export default function App() {
 
         <h1 id="page-title">{title}</h1>
         <p className="lede">
-          {greeting("builder")}{" "}
-          You have a fast, typed frontend with one runtime for installs, scripts, formatting,
-          linting, and tests.
+          {greeting("builder")} Toimiiiiko. Toimii.
         </p>
 
         <div className="actions">
