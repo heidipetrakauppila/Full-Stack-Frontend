@@ -1,0 +1,76 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",
+  "name": "Deno + Vite",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    "args": {
+      "DENO_VERSION": "2.9.6"
+    }
+  },
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+  "forwardPorts": [5173, 4173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite development server",
+      "onAutoForward": "openPreview"
+    },
+    "4173": {
+      "label": "Vite production preview",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "deno ci",
+  "customizations": {
+    "zed": {
+      "extensions": ["deno"]
+    },
+    "vscode": {
+      "extensions": [
+        "denoland.vscode-deno",
+        "EditorConfig.EditorConfig"
+      ],
+      "settings": {
+        "deno.enable": true,
+        "deno.lint": true,
+        "deno.codeLens.test": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports.deno": "explicit"
+        },
+        "files.watcherExclude": {
+          "**/node_modules/**": true,
+          "**/dist/**": true
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        },
+        "[json]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        },
+        "[css]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "denoland.vscode-deno",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  }
+}

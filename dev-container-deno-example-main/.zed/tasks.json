@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Deno: dev",
+    "command": "deno task dev"
+  },
+  {
+    "label": "Deno: check",
+    "command": "deno task check"
+  },
+  {
+    "label": "Deno: test",
+    "command": "deno task test"
+  },
+  {
+    "label": "Deno: build",
+    "command": "deno task build"
+  }
+]
